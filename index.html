@@ -1,31 +1,75 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
+    <link rel="icon" type="image/x-icon" href="img/rps-favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <main class="container">
-        <div class="userSelection">
-            <button id="Rock">Rock</button>
-            <button id="Paper">Paper</button>
-            <button id="Scissors">Scissors</button>  
+    <header class="header-container">
+        <div class="reset-game-container">
+            <button id="reset-game-button">Reset Game</button>
         </div>
-        <div class="roundResult">
-            <p></p>
+        <div class="reset-round-container">
+            <button id="reset-round-button">Reset Round</button>
         </div>
-        <div class="runningScore">
-            <p>User: </p>
-            <p id="userScore">0</p>
-            <p>Computer: </p>
-            <p id="computerScore">0</p>
+        <div class="text-container">
+            <h1>Rock Paper Scissors</h1>
         </div>
-        <div class="gameResult">
-            <p></p>
+    </header>
+
+    <main class="main-container">
+
+        <div class="playerselection-container">
+            <button class="playerselection-button" id="Rock">Rock</button>
+            <button class="playerselection-button" id="Paper">Paper</button>
+            <button class="playerselection-button" id="Scissors">Scissors</button>  
         </div>
-        <div class="resetButton">
-            <button id="reset">Reset</button>
+
+        <div class="totalscore-container">
+            <div class="user-totalscore-container">
+                <p>User: </p>
+                <p id="user-totalscore">0</p>
+            </div>
+
+            <div class="computer-totalscore-container">
+                <p>Computer: </p>
+                <p id="computer-totalscore">0</p>
+            </div>
+
+            <div class="gameresult-container">
+                
+            </div>
+        </div>
+
+        <div class="roundscore-container">
+            <div class="user-roundscore-container">
+                <p>User: </p>
+                <p id="user-roundscore">0</p>
+            </div>
+
+            <div class="computer-roundscore-container">
+                <p>Computer: </p>
+                <p id="computer-roundscore">0</p>
+            </div>
+
+            <div class="roundresult-container">
+    
+            </div>
+        </div>
+
+
+        <div class="computerselection-container">
+            <div class="computerselection" id="Rock">Rock</div>
+            <div class="computerselection" id="Paper">Paper</div>
+            <div class="computerselection" id="Scissors">Scissors</div>  
         </div>
     </main>
+
+    <footer class="footer-container">
+        footer
+    </footer>
     <script src="JS/index.js"></script>
 </body>

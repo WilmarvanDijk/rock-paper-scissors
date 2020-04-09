@@ -1,28 +1,30 @@
-/* Query Selectors */
-const userScore = document.querySelector("#userScore");
-const computerScore = document.querySelector("#computerScore")
-const roundResult = document.querySelector(".roundResult p"); 
-const gameResult = document.querySelector(".gameResult p");
-const buttons = document.querySelectorAll(".userSelection button");
-const resetButton = document.querySelector("#reset")
+/* Query Selectors (these values may change) */
+const userScore = document.querySelector("#user-roundscore");
+const computerScore = document.querySelector("#computer-roundscore")
+const userTotalScore = document.querySelector("#user-totalscore");
+const computerTotalScore = document.querySelector("#computer-totalscore")
+const roundResult = document.querySelector(".roundresult-container"); 
+const gameResult = document.querySelector(".gameresult-container");
+const buttons = document.querySelectorAll(".playerselection-button");
+const resetRoundButton = document.querySelector("#reset-round-button")
+const resetGameButton = document.querySelector("#reset-game-button")
 
 /* Declarations (object) */ 
-let rpsData = {gameResult: "", 
-                roundResult: "", 
-                playerSelection: "", 
-                computerSelection: "", 
-                round: 0, 
-                userScore: 0, 
-                computerScore: 0, 
-                drawScore: 0};
+let rpsData = {gameResult: "", roundResult: "", playerSelection: "", computerSelection: "", userTotalScore: 0, computerTotalScore: 0, round: 0, userScore: 0, computerScore: 0, drawScore: 0};
 
 /* Event Listeners */
 buttons.forEach(button => button.addEventListener("click", playGame));
-resetButton.addEventListener("click", resetGame);
+resetRoundButton.addEventListener("click", resetRound);
+resetGameButton.addEventListener("click", resetGame);
 
 /* Functions */
 function resetGame() {
-    setResetData();
+    setResetGameData();
+    updateHTML();
+}
+
+function resetRound() {
+    setResetRoundData();
     updateHTML();
 }
 
@@ -71,17 +73,26 @@ function computerPlay() {
 }  
 
 function setEndGameData() {
-    if(rpsData.userScore === 5){
+    if((rpsData.userScore === 5) && (rpsData.gameResult ==="")) {
+        rpsData.userTotalScore++;
         rpsData.gameResult = "You've won the game";
     }
-    else {
+    else if((rpsData.computerScore === 5) && (rpsData.gameResult ==="")) {
+        rpsData.computerTotalScore++;
         rpsData.gameResult = "You've lost the game";
     }
 }
 
-function setResetData() {
+function setResetGameData() {
+    rpsData.userTotalScore = 0;
+    rpsData.computerTotalScore = 0;
+    rpsData.gameResult = "";
+}
+
+function setResetRoundData() {
     rpsData.userScore = 0;
     rpsData.computerScore = 0;
+    rpsData.roundResult = "";
     rpsData.gameResult = "";
 }
 
@@ -105,4 +116,6 @@ function updateHTML() {
     computerScore.textContent = rpsData.computerScore;
     roundResult.textContent = rpsData.roundResult;
     gameResult.textContent = rpsData.gameResult;
+    userTotalScore.textContent = rpsData.userTotalScore;
+    computerTotalScore.textContent = rpsData.computerTotalScore;  
 }

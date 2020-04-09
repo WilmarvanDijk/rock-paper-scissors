@@ -1,0 +1,90 @@
+body {
+    background-color: grey;
+}
+
+.header-container {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+
+}
+
+    .reset-game-container {
+        border: 2px solid red;
+    }
+
+        #reset-game-button {
+            border: 1px solid green;
+        }
+
+    .reset-round-container {
+        border: 2px solid red;
+    }
+
+        #reset-round-button {
+            border: 1px solid green;
+        }
+
+    .text-container {
+        border: 2px solid red; 
+    }
+
+        .text-container h1 {
+            border: 1px solid green;
+        }
+
+.main-container {
+    border: 2px solid black;
+}
+
+    .playerselection-container {
+        border: 2px solid red; 
+    }
+
+        .playerselection-button {
+            border: 1px solid green; 
+        }
+
+    .totalscore-container {
+        border: 2px solid red; 
+    }
+
+        .user-totalscore-container {
+            border: 1px solid green; 
+        }
+
+        .computer-totalscore-container {
+            border: 1px solid green; 
+        }
+
+        .gameresult-container {
+            border: 1px solid green; 
+        }
+
+    .roundscore-container {
+        border: 2px solid red; 
+    }
+
+        .user-roundscore-container {
+            border: 1px solid green; 
+        }
+
+        .computer-roundscore-container {
+            border: 1px solid green; 
+        }
+
+        .roundresult-container {
+            border: 1px solid green; 
+        }
+
+    .computerselection-container {
+        border: 2px solid red; 
+    }
+
+        .computerselection {
+            border: 1px solid green; 
+        }
+
+.footer-container {
+    border: 2px solid black;
+}
