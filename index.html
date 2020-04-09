@@ -5,59 +5,27 @@
 </head>
 
 <body>
-    <script>
-        game();
-
-        function capitalize(string) {
-            let lowercaseString = string.toLowerCase();
-            let capitalizeFirstLetter = lowercaseString.charAt(0).toUpperCase();
-            let lowercaseSubString = lowercaseString.slice(1, lowercaseString.length);
-            let sentenceResult = capitalizeFirstLetter + lowercaseSubString;
-            return sentenceResult;
-        }
-
-        function computerPlay() {
-            const choices =  ["Rock", "Paper", "Scissors"];
-            let randomNumber = Math.floor(Math.random() * 3);
-            return choices[randomNumber];
-        }    
-
-        function getInput() {
-            let playerSelection = prompt("Let's play a game of Rock, Paper, Scissors.\nEnter your choice");
-            let computerSelection = computerPlay();
-            playerSelection = capitalize(playerSelection);
-            alert("PlayerSelection: " + playerSelection + "\ncomputerSelection: " + computerSelection);
-            return [playerSelection, computerSelection];
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            switch(playerSelection + computerSelection) {
-                case "RockScissors":
-                case "PaperRock":
-                case "ScissorsPaper":
-                    alert("You Win! " + playerSelection + " beats " + computerSelection);
-                    break;
-                case "RockPaper":
-                case "PaperScissors":
-                case "ScissorsRock":
-                    alert("You Lose! " + computerSelection + " beats " + playerSelection);
-                    break;
-                case "RockRock":
-                case "PaperPaper":
-                case "ScissorsScissors":
-                    alert("It's a draw! " + playerSelection + " draws " + computerSelection);
-                    break;
-                default: alert("Error! Only the following inputs are allowed: Rock, Paper, Scissors");
-            }
-        }
-
-        function game() {
-            let gameSelections;
-            for(let i = 0; i < 5; i++){
-                console.log(i);
-                gameSelections = getInput();
-                playRound(gameSelections[0], gameSelections[1]);
-            }
-        }
-    </script>
+    <main class="container">
+        <div class="userSelection">
+            <button id="Rock">Rock</button>
+            <button id="Paper">Paper</button>
+            <button id="Scissors">Scissors</button>  
+        </div>
+        <div class="roundResult">
+            <p></p>
+        </div>
+        <div class="runningScore">
+            <p>User: </p>
+            <p id="userScore">0</p>
+            <p>Computer: </p>
+            <p id="computerScore">0</p>
+        </div>
+        <div class="gameResult">
+            <p></p>
+        </div>
+        <div class="resetButton">
+            <button id="reset">Reset</button>
+        </div>
+    </main>
+    <script src="JS/index.js"></script>
 </body>
