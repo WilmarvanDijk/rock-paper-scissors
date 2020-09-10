@@ -5,87 +5,91 @@
     <title>Rock Paper Scissors</title>
     <link rel="icon" type="image/x-icon" href="img/rps-favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- <div class="bg"> 
+
+    <div class="bg"> 
         <div id="rockbg" class="bgfill">
         </div>
         <div id="paperbg" class="bgfill">
         </div>
         <div id="scissorsbg" class="bgfill">
         </div>
-    </div> -->
-
+    </div>
 
     <header class="header-container">
-        <div class="reset-game-container">
+        <!-- <div class="reset-game-container">
             <button id="reset-game-button">Reset Game</button>
         </div>
         <div class="reset-round-container">
             <button id="reset-round-button">Reset Round</button>
+        </div> -->
+        <div class="text-container">
+            <h1 class="text-styling">Rock</h1>
         </div>
         <div class="text-container">
-            <h1>Rock</h1>
+            <h1 class="text-styling">Paper</h1>
         </div>
         <div class="text-container">
-            <h1>Paper</h1>
-        </div>
-        <div class="text-container">
-            <h1>Scissors</h1>
+            <h1 class="text-styling">Scissors</h1>
         </div>
     </header>
 
     <main class="main-container">
-
-        <div class="playerselection-container">
-            <button class="playerselection-button" id="Rock">Rock</button>
-            <button class="playerselection-button" id="Paper">Paper</button>
-            <button class="playerselection-button" id="Scissors">Scissors</button>  
+        <div class="selection-container">
+            <button class="button-selection user-selection" id="Rock" >
+            </button>
+            <button class="button-selection user-selection" id="Paper">
+            </button>
+            <button class="button-selection user-selection" id="Scissors">
+            </button>  
         </div>
 
-        <div class="totalscore-container">
-            <div class="user-totalscore-container">
-                <p>User: </p>
-                <p id="user-totalscore">0</p>
+        <div class="result-container">
+            <div class="roundscore-container">
+                <div id="userHP" class="user-roundscore-container">
+                </div>
+                <div id="computerHP" class="user-roundscore-container">
+                </div>
             </div>
-
-            <div class="computer-totalscore-container">
-                <p>Computer: </p>
-                <p id="computer-totalscore">0</p>
-            </div>
-
-            <div class="gameresult-container">
-                
-            </div>
-        </div>
-
-        <div class="roundscore-container">
-            <div class="user-roundscore-container">
-                <p>User: </p>
-                <p id="user-roundscore">0</p>
-            </div>
-
-            <div class="computer-roundscore-container">
-                <p>Computer: </p>
-                <p id="computer-roundscore">0</p>
-            </div>
-
-            <div class="roundresult-container">
     
+            <div class="roundresult-container">
+                <div class="player-choice">
+                    <button type="button" disabled class="button-selection buttonselection-active" id="userSelection">
+                    </button> 
+                </div>
+                <div class="result">
+                    <h2 id="game-result"></h2>
+                    <h2 id="round"></h2>
+                    <h3 id="round-result"></h3>
+                    <h3 id="round-selection"></h3>
+                </div>
+                <div class="computer-choice">
+                    <button type="button" disabled class="button-selection buttonselection-active" id="computerSelection">
+                    </button> 
+                </div>
+            </div>
+            <div class="reset-game-container"> <!--reset game container-->
+                <button class="reset-game-button button-selection user-selection">Reset Game
+                </button> 
+                </div>
             </div>
         </div>
 
-
-        <div class="computerselection-container">
-            <div class="computerselection" id="Rock">Rock</div>
-            <div class="computerselection" id="Paper">Paper</div>
-            <div class="computerselection" id="Scissors">Scissors</div>  
+        <div class="selection-container">
+            <button type="button" disabled class="button-selection" id="Rock">
+            </button>
+            <button type="button" disabled class="button-selection" id="Paper">
+            </button>
+            <button type="button" disabled class="button-selection" id="Scissors">
+            </button>  
         </div>
     </main>
 
-    <footer class="footer-container">
+    <!-- <footer class="footer-container">
         footer
-    </footer>
+    </footer> -->
     <script src="JS/index.js"></script>
 </body>

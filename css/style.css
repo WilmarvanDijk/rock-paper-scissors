@@ -3,19 +3,26 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: arial, sans-serif;
+    color: #B34D4D;
+    font-family: "Black Han Sans", arial, sans-serif;
     font-size: 13px;
     max-width: 100%;
     max-height: 100%;
     width: 100vw;
     height: 100vh;
+
 }
 
-/* .bg{
+.bg{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    z-index:-100;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -100;
 }
 
     .bgfill {
@@ -34,84 +41,237 @@ body {
 
     #scissorsbg {
         background-image: url("../img/ScissorsBg.jpg");
-    } */
+    }
 
 .header-container {
-    z-index: 1;
-    border: 2px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-    .reset-game-container {
+    .text-container {
+        margin-top: 27px;
+        width: 33.33%; 
+    }
+
+    .text-styling { 
+        text-align: center;
+        margin: auto;
+        font-size: 86px;
+        -webkit-text-stroke: 5px black;
+    }
+
+    /* .reset-game-container {
         border: 2px solid red;
     }
 
-        #reset-game-button {
-            border: 1px solid green;
-        }
+    #reset-game-button {
+        border: 1px solid green;
+    }
 
     .reset-round-container {
         border: 2px solid red;
     }
 
-        #reset-round-button {
-            border: 1px solid green;
-        }
-
-    .text-container {
-        width: 33.33%;
-        border: 2px solid red; 
-    }
-
-        .text-container h1 {
-            border: 1px solid green;
-        }
+    #reset-round-button {
+        border: 1px solid green;
+    } */
 
 .main-container {
-    border: 2px solid black;
+    margin: 27px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 2px solid black; */
 }
 
-    .playerselection-container {
-        border: 2px solid red; 
+    .selection-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        /* position: absolute; */
+        width: 288px;
+        height: 648px;
+        /* left: 96px; */
+        /* top: 216px; */
+        /* border: 2px solid red;  */
+        background-color: #394E53;
+        border: 3px solid black;
+        box-sizing: border-box;
+        box-shadow: inset 0px 12px 24px rgba(0,0,0,0.75);
+        border-radius: 16px 0px;
     }
+
+        #Rock {
+            background-image: url("../img/HandRock.png"),url("../img/RockBg.jpg");
+        }
+
+        #Paper {
+            background-image: url("../img/HandPaper.png"),url("../img/PaperBg.jpg");
+        }
+
+        #Scissors {
+            background-image: url("../img/HandScissor.png"),url("../img/ScissorsBg.jpg");
+        }
+
+        #Question {
+            background-image: url("../img/Background.png"),url("../img/BackgroundRPS.png");
+            /* background-size: 48px 48px, contain; */
+        }
 
         .playerselection-button {
-            border: 1px solid green; 
+            outline: none;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: none;
+            /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 48px 48px, cover;
         }
 
-    .totalscore-container {
-        border: 2px solid red; 
+        .button-selection {
+            outline: none;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: none;
+            /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 48px 48px, cover;
+        }
+
+        .user-selection:hover {
+            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
+        }
+
+        .user-selection:active {
+            filter:blur(2px);
+            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
+        }
+
+        .buttonselection-active {
+            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
+        }
+
+    .result-container {
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        align-content: space-between;
+        width: 960px;
+        height: 600px;
     }
 
-        .user-totalscore-container {
-            border: 1px solid green; 
+        .roundscore-container {
+            display: flex;
+            flex-wrap: row;
+            justify-content: space-around;
+            width: 960px;
+            /* border: 2px solid red;  */
         }
+            .user-roundscore-container {
+                background-color: #394E53;
+                background-image: url("../img/HPBar.png");
+                background-repeat: no-repeat;
+                background-size: 384px 54px;
+                background-position-x: 0px;
+                background-position-y: center; /*when using JS, shift this position with -76.8px when a life gets taken*/
+                border: 3px solid #000000;
+                box-sizing: border-box;
+                border-radius: 16px 0px;
+                width: 384px;
+                height: 54px;
+                display:flex;
+                justify-content: space-around;
+            }
 
-        .computer-totalscore-container {
-            border: 1px solid green; 
-        }
+            /* .computer-roundscore-container {
+                background-color: #394E53;
+                background-image: url("../img/HPBar.png");
+                background-repeat: no-repeat;
+                background-size: 384px 54px;
+                background-position: 0px center;
+                border: 3px solid #000000;
+                box-sizing: border-box;
+                border-radius: 16px 0px;
+                width: 384px;
+                height: 54px;
+            } */
 
-        .gameresult-container {
-            border: 1px solid green; 
-        }
-
-    .roundscore-container {
-        border: 2px solid red; 
-    }
-
-        .user-roundscore-container {
-            border: 1px solid green; 
-        }
-
-        .computer-roundscore-container {
-            border: 1px solid green; 
-        }
 
         .roundresult-container {
-            border: 1px solid green; 
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 960px;
+            height: 378px;
+            /* left: 480px;
+            top: 379px; */
+            background: #394E53;
+            border: 2px solid #000000;
+            box-sizing: border-box;
+            border-radius: 16px 0px;
         }
+
+            .player-choice {
+                outline: none;
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                border: none; */
+                /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 48px 48px, cover;
+            }
+
+            .result {
+                display: flex;
+                /* justify-content: space-around; */
+                /* align-content: space-between; */
+                flex-direction: column;
+                text-align: center;
+                -webkit-text-stroke: 2px black;
+            }
+
+            h2 {
+                font-size: 32px; /*48px*/
+            }
+            
+            h3 { 
+                font-size: 24px; /*32px*/
+            }
+
+            .computer-choice {
+            }
+
+            .reset-game-button {
+                background-color: #394E53;
+                /* background-image: url("../img/HPBar.png");
+                background-repeat: no-repeat;
+                background-size: 384px 54px;
+                background-position-x: 0px; */
+                background-position-y: center; /*when using JS, shift this position with -76.8px when a life gets taken*/
+                border: 3px solid #000000;
+                box-sizing: border-box;
+                border-radius: 16px 0px;
+                width: 384px;
+                height: 54px;
+                display:flex;
+                -webkit-text-stroke: 2px black;
+                justify-content: space-around;
+                font-size: 24px;
+                font-family: inherit;
+                color: inherit;
+            }
 
     .computerselection-container {
         border: 2px solid red; 
