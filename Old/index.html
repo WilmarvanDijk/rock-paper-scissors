@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="icon" type="image/x-icon" href="img/rps-favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg"> 
+        <div id="rockbg" class="bgfill">
+        </div>
+        <div id="paperbg" class="bgfill">
+        </div>
+        <div id="scissorsbg" class="bgfill">
+        </div>
+    </div>
+
+    <header class="header-container">
+        <div class="text-container">
+            <h1 class="text-styling">Rock</h1>
+        </div>
+        <div class="text-container">
+            <h1 class="text-styling">Paper</h1>
+        </div>
+        <div class="text-container">
+            <h1 class="text-styling">Scissors</h1>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="selection-container">
+            <button class="button-selection user-selection" id="Rock" >
+            </button>
+            <button class="button-selection user-selection" id="Paper">
+            </button>
+            <button class="button-selection user-selection" id="Scissors">
+            </button>  
+        </div>
+
+        <div class="result-container">
+            <div class="roundscore-container">
+                <div id="userHP" class="user-roundscore-container">
+                </div>
+                <div id="computerHP" class="user-roundscore-container">
+                </div>
+            </div>
+    
+            <div class="roundresult-container">
+                <div class="player-choice">
+                    <button type="button" disabled class="button-selection buttonselection-active" id="userSelection">
+                    </button> 
+                </div>
+                <div class="result">
+                    <h2 id="game-result"></h2>
+                    <h2 id="round"></h2>
+                    <h3 id="round-result"></h3>
+                    <h3 id="round-selection"></h3>
+                </div>
+                <div class="computer-choice">
+                    <button type="button" disabled class="button-selection buttonselection-active" id="computerSelection">
+                    </button> 
+                </div>
+            </div>
+            <div class="reset-game-container"> <!--reset game container-->
+                <button class="reset-game-button button-selection user-selection">Reset Game
+                </button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="selection-container">
+            <button type="button" disabled class="button-selection" id="Rock">
+            </button>
+            <button type="button" disabled class="button-selection" id="Paper">
+            </button>
+            <button type="button" disabled class="button-selection" id="Scissors">
+            </button>  
+        </div>
+    </main>
+
+    <script src="JS/index.js"></script>
+</body>

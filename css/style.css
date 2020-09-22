@@ -1,19 +1,16 @@
 body {
-    /* background-image: url("/home/wilmarvdijk/Documenten/the_odin_project/rock-paper-scissors/img/Background.png"); */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #B34D4D;
-    font-family: "Black Han Sans", arial, sans-serif;
-    font-size: 13px;
     max-width: 100%;
     max-height: 100%;
     width: 100vw;
     height: 100vh;
-
 }
 
-.bg{
+/* classes */
+
+.background {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,262 +22,182 @@ body {
     z-index: -100;
 }
 
-    .bgfill {
+    .background__block {
         width: 33.33%;
         height: 100vh;
         background-size: cover;
     }
 
-    #rockbg {
+    .background__block--rock {
         background-image: url("../img/RockBg.jpg");
     }
 
-    #paperbg {
+    .background__block--paper {
         background-image: url("../img/PaperBg.jpg");
     }
 
-    #scissorsbg {
+    .background__block--scissors {
         background-image: url("../img/ScissorsBg.jpg");
     }
 
-.header-container {
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0px 0px 27px 0px;
 }
 
-    .text-container {
-        margin-top: 27px;
+    .header__text { 
         width: 33.33%; 
-    }
-
-    .text-styling { 
         text-align: center;
-        margin: auto;
+        margin: 27px 0px 0px 0px;
         font-size: 86px;
         -webkit-text-stroke: 5px black;
     }
 
-    /* .reset-game-container {
-        border: 2px solid red;
-    }
-
-    #reset-game-button {
-        border: 1px solid green;
-    }
-
-    .reset-round-container {
-        border: 2px solid red;
-    }
-
-    #reset-round-button {
-        border: 1px solid green;
-    } */
-
-.main-container {
-    margin: 27px;
+.box {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* border: 2px solid black; */
+    background-color: #394E53;
+    border: 3px solid black;
+    box-sizing: border-box;
+    box-shadow: inset 0px 12px 24px rgba(0,0,0,0.75);
+    border-radius: 16px 0px;
 }
 
-    .selection-container {
-        display: flex;
+    .box--direction--column {
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        /* position: absolute; */
+    }
+
+    .box--direction--row {
+        flex-direction: row;
+    }
+
+    .box--background--hp {
+        background-image: url("../img/HPBar.png");
+        background-repeat: no-repeat;
+        background-size: 384px 54px;
+        background-position-x: 0px;
+        background-position-y: center; /*when using JS, shift this position with -76.8px when a life gets taken*/
+    }
+
+    .box--size--big {
+        width: 960px;
+        height: 378px;
+    }
+    
+    .box--size--medium {
         width: 288px;
         height: 648px;
-        /* left: 96px; */
-        /* top: 216px; */
-        /* border: 2px solid red;  */
-        background-color: #394E53;
-        border: 3px solid black;
-        box-sizing: border-box;
-        box-shadow: inset 0px 12px 24px rgba(0,0,0,0.75);
-        border-radius: 16px 0px;
     }
 
-        #Rock {
-            background-image: url("../img/HandRock.png"),url("../img/RockBg.jpg");
-        }
-
-        #Paper {
-            background-image: url("../img/HandPaper.png"),url("../img/PaperBg.jpg");
-        }
-
-        #Scissors {
-            background-image: url("../img/HandScissor.png"),url("../img/ScissorsBg.jpg");
-        }
-
-        #Question {
-            background-image: url("../img/Background.png"),url("../img/BackgroundRPS.png");
-            /* background-size: 48px 48px, contain; */
-        }
-
-        .playerselection-button {
-            outline: none;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: none;
-            /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 48px 48px, cover;
-        }
-
-        .button-selection {
-            outline: none;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: none;
-            /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 48px 48px, cover;
-        }
-
-        .user-selection:hover {
-            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
-        }
-
-        .user-selection:active {
-            filter:blur(2px);
-            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
-        }
-
-        .buttonselection-active {
-            box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
-        }
-
-    .result-container {
-        /* border: 2px solid red; */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        align-content: space-between;
-        width: 960px;
-        height: 600px;
+    .box--size--small {
+        width: 384px;
+        height: 54px;
     }
 
-        .roundscore-container {
-            display: flex;
-            flex-wrap: row;
-            justify-content: space-around;
-            width: 960px;
-            /* border: 2px solid red;  */
-        }
-            .user-roundscore-container {
-                background-color: #394E53;
-                background-image: url("../img/HPBar.png");
-                background-repeat: no-repeat;
-                background-size: 384px 54px;
-                background-position-x: 0px;
-                background-position-y: center; /*when using JS, shift this position with -76.8px when a life gets taken*/
-                border: 3px solid #000000;
-                box-sizing: border-box;
-                border-radius: 16px 0px;
-                width: 384px;
-                height: 54px;
-                display:flex;
-                justify-content: space-around;
-            }
-
-            /* .computer-roundscore-container {
-                background-color: #394E53;
-                background-image: url("../img/HPBar.png");
-                background-repeat: no-repeat;
-                background-size: 384px 54px;
-                background-position: 0px center;
-                border: 3px solid #000000;
-                box-sizing: border-box;
-                border-radius: 16px 0px;
-                width: 384px;
-                height: 54px;
-            } */
-
-
-        .roundresult-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            width: 960px;
-            height: 378px;
-            /* left: 480px;
-            top: 379px; */
-            background: #394E53;
-            border: 2px solid #000000;
-            box-sizing: border-box;
-            border-radius: 16px 0px;
+        .button {
+            outline: none;
+            margin: 0;
         }
 
-            .player-choice {
-                outline: none;
+            .button__box {
                 width: 160px;
                 height: 160px;
                 border-radius: 50%;
-                border: none; */
-                /* box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75); */
+                border: none;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 48px 48px, cover;
             }
 
-            .result {
-                display: flex;
-                /* justify-content: space-around; */
-                /* align-content: space-between; */
-                flex-direction: column;
-                text-align: center;
-                -webkit-text-stroke: 2px black;
+            .button--hover {
+                box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
             }
 
-            h2 {
-                font-size: 32px; /*48px*/
-            }
-            
-            h3 { 
-                font-size: 24px; /*32px*/
+            .button--active {
+                filter:blur(2px);
+                box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.75);
             }
 
-            .computer-choice {
+            .button--rock {
+                background-image: url("../img/HandRock.png"),url("../img/RockBg.jpg");
             }
 
-            .reset-game-button {
-                background-color: #394E53;
-                /* background-image: url("../img/HPBar.png");
-                background-repeat: no-repeat;
-                background-size: 384px 54px;
-                background-position-x: 0px; */
-                background-position-y: center; /*when using JS, shift this position with -76.8px when a life gets taken*/
-                border: 3px solid #000000;
-                box-sizing: border-box;
-                border-radius: 16px 0px;
-                width: 384px;
-                height: 54px;
-                display:flex;
-                -webkit-text-stroke: 2px black;
-                justify-content: space-around;
-                font-size: 24px;
-                font-family: inherit;
-                color: inherit;
+            .button--paper{
+                background-image: url("../img/HandPaper.png"),url("../img/PaperBg.jpg");
             }
 
-    .computerselection-container {
-        border: 2px solid red; 
+            .button--scissors {
+                background-image: url("../img/HandScissor.png"),url("../img/ScissorsBg.jpg");
+            }
+
+            .button--standard {
+                background-image: url(), url("../img/BackgroundRPS.png");
+            }
+
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            align-content: space-between;
+        }
+    
+
+    .wrapper--size--big {
+        width: 960px;
+        height: 600px;
     }
 
-        .computerselection {
-            border: 1px solid green; 
-        }
+    .wrapper--size--medium {
+        width: 388px;
+        height: 332px;
+    }
 
-.footer-container {
-    border: 2px solid black;
-}
+    .wrapper--row {
+        flex-direction: row;
+    }
+
+    .wrapper--column {
+        flex-direction: column;
+    }
+
+    .text {
+        color: #B34D4D;
+        -webkit-text-stroke: 2px black;
+        font-family: "Black Han Sans", arial, sans-serif;
+    }
+
+    .t1 {
+        font-size: 86px;
+    }
+    
+    .t2 {
+        font-size: 32px;
+    }
+    
+    .t3 { 
+        font-size: 24px;
+    }
+
+    .o1 {
+        -webkit-text-stroke: 5px black;
+    }
+
+    .o2 {
+        -webkit-text-stroke: 3px black;
+    }
+
+    .o3 {
+        -webkit-text-stroke: 2px black;
+    }
+
+    h2 {
+        margin: 24px 0px;
+    }
+
+    h3 {
+        margin: 24px 0px;
+    }

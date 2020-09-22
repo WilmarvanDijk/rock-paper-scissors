@@ -1,0 +1,90 @@
+/* Media Queries */
+@media (max-width: 680px) and (min-height: 600px) {
+    .t1 {
+        font-size: 21.5px;
+    }
+    
+    .t2 {
+        font-size: 8px;
+    }
+    
+    .t3 { 
+        font-size: 6px;
+    }
+
+    .o1 {
+        -webkit-text-stroke: 1.25px black;
+    }
+
+    .o2 {
+        -webkit-text-stroke: 0.75px black;
+    }
+
+    .o3 {
+        -webkit-text-stroke: 0.5px black;
+    }
+
+    h2 {
+        margin: 6px 0px;
+    }
+
+    h3 {
+        margin: 6px 0px;
+    }
+
+    /* Sizes (divided by 4) */
+    .box--size--big {
+        width: 240px; 
+        height: 94.5px;
+    }
+    
+    .box--size--medium {
+        width: 162px;
+        height: 72px;
+    }
+
+    .box--size--small {
+        width: 96px;
+        height: 13.5px;
+    }
+
+    .wrapper--size--big {
+        width: 240px;
+        height: 150px;
+    }
+
+    .wrapper--size--medium {
+        width: 97px;
+        height: 83px;
+    }
+
+    .box {
+        flex-direction: row;
+        display: flex;
+        flex-shrink: 4;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #394E53;
+        border: 0.75px solid black;
+        box-sizing: border-box;
+        box-shadow: inset 0px 3px 6px rgba(0,0,0,0.75);
+        border-radius: 4px 0px;        
+    }
+
+    .button__box {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-size: 12px 12px, cover;
+    }
+
+    .box--background--hp {
+        background-size: 96px 13.5px;
+        background-position-x: 0px;
+        background-position-y: center;
+    }
+
+    main.wrapper { 
+        flex-direction: column;
+    }
+} 
